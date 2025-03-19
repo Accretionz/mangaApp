@@ -29,7 +29,6 @@ function App() {
   const [chapters, setChapters] = useState<ChapterResult[]>([]);
   const [loadingChapters, setLoadingChapters] = useState(false);
   const [images, setImages] = useState<ImageResult[]>([]);
-  const [loadingImages, setLoadingImages] = useState(false);
 
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -204,7 +203,6 @@ function App() {
   };
 
   const handleChapterSelection = async (chapter: ChapterResult) => {
-    setLoadingImages(true);
     setImages([]);
 
     try {
@@ -242,8 +240,6 @@ function App() {
       setImages(imageResults);
     } catch (error) {
       console.error("Error fetching chapter images:", error);
-    } finally {
-      setLoadingImages(false);
     }
   };
 
