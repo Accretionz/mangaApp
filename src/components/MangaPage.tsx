@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChapterResult, ImageResult, MangaResult } from "../types/manga";
 
 export const MangaPage = () => {
-  const { id } = useParams();
   const location = useLocation();
   const manga = location.state?.manga as MangaResult;
 
